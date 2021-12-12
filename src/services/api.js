@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://inshortback.herokuapp.com/";
+const URL = "https://inshortback.herokuapp.com";
 export const getNews = async (pages, size = 5) => {
   try {
     return await axios.get(`${URL}/news?page=${pages}&size=${size}`);
