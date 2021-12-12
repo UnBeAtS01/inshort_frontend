@@ -5,12 +5,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const Articles = () => {
   const [articles, setData] = useState([]);
   const [pages, setPage] = useState(0);
-  const dailyNews = async () => {
-    let response = await getNews(pages);
-    if (response !== null) setData([...articles, ...response.data]);
-    console.log(response);
-  };
+
   useEffect(() => {
+    const dailyNews = async () => {
+      let response = await getNews(pages);
+      if (response !== null)
+        setData((articles) => [...articles, ...response.data]);
+      console.log(response);
+    };
     dailyNews();
   }, [pages]);
   return (

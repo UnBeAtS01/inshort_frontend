@@ -5,7 +5,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { useState } from "react";
+
 const useStyles = makeStyles((theme) => ({
   image: {
     height: 268,
@@ -57,7 +57,7 @@ const Article = ({ article }) => {
       <CardContent className={classes.container}>
         <Grid container columns={16}>
           <Grid item lg={5} md={5} sm={12} xs={12}>
-            <img className={classes.image} src={article.url} alt="image" />{" "}
+            <img className={classes.image} src={article.url} alt="imagess" />{" "}
           </Grid>
           <Grid
             item
@@ -77,7 +77,7 @@ const Article = ({ article }) => {
             </Typography>
             <Typography className={classes.publisher}>
               read more at{" "}
-              <a href={article.url} target="_blank">
+              <a href={article.url} rel="noreferrer" target="_blank">
                 {article.publisher}
               </a>
             </Typography>
